@@ -12,7 +12,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 // Placeholder Firebase client – replace the config with your own project credentials.
 import { firebaseAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "@/integrations/firebase/client";
-import "@lovable.dev/cloud-auth-js/styles.css";
+// Removed Lovable CSS import (frontend only)
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -156,7 +156,7 @@ function AuthPage() {
           </div>
           <div className="space-y-2">
             <Button variant="outline" className="w-full" onClick={() => oauth("google")}>Continue with Google</Button>
-            <button type="button" className="lovable-auth-button w-full" onClick={() => oauth("lovable")}>Continue with Lovable</button>
+            <Button variant="outline" className="w-full" onClick={() => oauth("provider")}>Continue with Provider</Button>
           </div>
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {mode === "in" ? "New here?" : "Have an account?"}{" "}

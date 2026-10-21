@@ -11,8 +11,8 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
-import { supabase } from "@/integrations/supabase/client";
+// Removed Lovable error reporting and Supabase import (backend stripped)
+
 import { Toaster } from "@/components/ui/sonner";
 import { createAuthEventHandler } from "@/lib/auth-events";
 
@@ -35,9 +35,9 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+  // Placeholder for error reporting (e.g., Firebase); previously used Lovable.
+  // Console error is logged above.
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -57,7 +57,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Slate — School Management" },
+      { title: "School Management System" },
       { name: "description", content: "Students, attendance, grades and announcements for your school." },
     ],
     links: [
@@ -98,19 +98,11 @@ function RootComponent() {
         }
       });
     };
-    const { data } = supabase.auth.onAuthStateChange(createAuthEventHandler({
-      sessionReady: openAccount,
-      signedIn: () => {
-        void queryClient.invalidateQueries();
-        openAccount();
-      },
-      signedOut: () => {
-        queryClient.clear();
-        queueMicrotask(() => { void router.invalidate(); });
-      },
-      userUpdated: () => { void queryClient.invalidateQueries({ queryKey: ["session-info"] }); },
-    }));
-    return () => data.subscription.unsubscribe();
+    // Placeholder for authentication state handling.
+    // In a full backend, integrate Firebase auth listener here.
+    // Removed Supabase usage.
+    // No return cleanup needed.
+
   }, [router, queryClient]);
 
   return (

@@ -1,6 +1,6 @@
-# Slate School Management
+# School Management System
 
-Slate uses Lovable Cloud for school records and sign-in. Each school has isolated records, protected roles, and a read-only audit history.
+Slate is a school management system built with React, TypeScript, and Tailwind CSS. It provides tools for grades, attendance, announcements, fees, messaging, timetables, and assignments.
 
 ## School setup
 
@@ -28,13 +28,13 @@ Administrator workflows verified: enrollment, grade readback, report cards, noti
 
 Run `bunx vitest run` for authentication, routing and school-rule regression tests.
 
-## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Open the project in your IDE and continue development.
+
+- **Rapid development**: quickly prototype features with modern tools.
+- **Version control**: integrate with GitHub for seamless commits.
+- **Full ownership**: the codebase is yours to maintain and scale.
 
 ## Development
 
